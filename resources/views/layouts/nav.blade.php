@@ -3,7 +3,7 @@
         <a class="navbar-brand">
             {{ config('app.name') }}
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" >
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -15,20 +15,20 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-              <li class="search-bar input-group">
+              <li class="search-bar input-group" onclick="document.getElementById('searchModal').classList.toggle('show');">
                 <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
                   <span class="d-lg-none d-md-block">Search</span>
                 </button>
               </li>
-              <li class="dropdown nav-item">
-                <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
+              <li class="dropdown nav-item pointer" id="notificationsDropdown" onclick="document.getElementById('notificationsDropdown').classList.toggle('show');">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="notification d-none d-lg-block d-xl-block"></div>
                   <a><i class="tim-icons icon-sound-wave"></i></a>
                   <p class="d-lg-none">
                     Notifications
                   </p>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
+                <ul class="dropdown-menu dropdown-menu-right dropdown-navbar show">
                   <li class="nav-link"><a href="#" class="nav-item dropdown-item">Mike John responded to your email</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">You have 5 more tasks</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Your friend Michael is in town</a></li>
@@ -36,7 +36,7 @@
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another one</a></li>
                 </ul>
               </li>
-              <li class="dropdown nav-item" id="logOutDropdown" onclick="document.getElementById('logOutDropdown').classList.toggle('show');">
+              <li class="dropdown nav-item pointer" id="logOutDropdown" onclick="document.getElementById('logOutDropdown').classList.toggle('show');">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
                     <img src="/img/img.jpeg" alt="Profile Photo">
@@ -67,16 +67,6 @@
         </div>
     </div>
 </nav>
-<div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+
+@include ('layouts.search')
 
