@@ -4,7 +4,7 @@
 <div class="container register">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="cardm enter">
+            <div>
                 <div class="card-header">{{ __('Registrar Usuario') }}</div>
 
                 <div class="card-body">
