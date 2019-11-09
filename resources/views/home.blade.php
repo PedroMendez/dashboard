@@ -39,7 +39,7 @@
         </div>
         <div class="row">
           <div class="col-lg-6 col-md-12">
-            @include ('cards.tasks')  
+            @include ('cards.tasks')
           </div>
           <div class="col-lg-6 col-md-12">
             <div class="card empty">
@@ -52,9 +52,18 @@
           </div>
         </div>
       </div>
-      @include ('footer')  
+      @include ('footer')
     </div>
   </div>
 @include ('fixed')
+<script src="/js/chartjs.min.js"></script>
+<script src="/js/charts.js"></script>
+<script>
+  (function() {
+    // Javascript method's body can be found in assets/js/demos.js
+    charts.initDashboardPageCharts();
+
+  })();
+</script>
 
 @endsection
