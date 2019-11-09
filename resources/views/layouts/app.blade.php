@@ -23,7 +23,7 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="/css/styles.min.css" rel="stylesheet" />
 </head>
-<body>
+<body id="mainBody">
     <div>
         @if (!empty($hasNav))
             @include('layouts.nav')
