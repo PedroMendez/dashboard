@@ -14,7 +14,9 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        //
+        $hasNav = true;
+
+        return view('profile', compact('hasNav'));
     }
 
     /**
