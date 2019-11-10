@@ -9,16 +9,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-
-            </ul>
-
+            <ul class="navbar-nav mr-auto"></ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
               <li class="search-bar input-group" onclick="document.getElementById('searchModal').classList.toggle('show');">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
+                <div class="search-icon pointer">
+                  <a><i class="tim-icons icon-zoom-split"></i></a>
                   <span class="d-lg-none d-md-block">Search</span>
-                </button>
+                <div>
               </li>
               <li class="dropdown nav-item pointer" id="notificationsDropdown" onclick="document.getElementById('notificationsDropdown').classList.toggle('show');">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
