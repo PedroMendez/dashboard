@@ -16,7 +16,7 @@
       ©
       <script>
         document.write(new Date().getFullYear())
-      </script> made with <i class="tim-icons icon-heart-2"></i> for a better web.
+      </script> - Code is poetry.
     </div>
   </div>
 </footer>

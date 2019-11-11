@@ -37,7 +37,7 @@
               <li class="dropdown nav-item pointer" id="logOutDropdown" onclick="document.getElementById('logOutDropdown').classList.toggle('show');">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="/img/img.jpeg" alt="Profile Photo">
+                    <img src="/img/profile.png" alt="Profile Photo">
                   </div>
                   <a>
                     <b class="caret d-none d-lg-block d-xl-block"></b>
@@ -55,7 +55,6 @@
                                          document.getElementById('logout-form').submit();" class="nav-item dropdown-item">Log out</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
-
                         </form>
                     </li>
                 </ul>
@@ -66,5 +65,5 @@
     </div>
 </nav>
 
-@include ('layouts.search')
+@include ('components.search')
 

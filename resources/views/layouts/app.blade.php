@@ -28,30 +28,12 @@
         @if (!empty($hasNav))
             @include('layouts.nav')
         @endif
-        <main>
-            <div class="wrapper">
-                <div class="sidebar">
-                    @include ('layouts.sidebar')
-                    <div class="main-panel">
-                        @yield('content')
-                    </div>
-                </div>
-            </div>
-            @include ('fixed')
+        <main>      
+            @yield('content')
         </main>
     </div>
 <script>
-    document.getElementById("whiteBadge").addEventListener("click", clickToWhite);
 
-    document.getElementById("blackBadge").addEventListener("click", clickToBlack);
-
-    function clickToWhite() {
-        document.getElementById("mainBody").classList.add("white-content");
-    }
-
-    function clickToBlack() {
-        document.getElementById("mainBody").classList.remove("white-content");
-    }
 </script>
 </body>
 </html>
