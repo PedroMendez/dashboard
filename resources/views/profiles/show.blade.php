@@ -10,7 +10,7 @@
                 <div class="col-md-8">
                   <div class="card">
                     <div class="card-header">
-                      <h5 class="title">Edit Profile</h5>
+                      <h5 class="title">Profile</h5>
                     </div>
                     <div class="card-body">
                       <form>
@@ -18,7 +18,7 @@
                           <div class="col-md-5 pr-md-1">
                             <div class="form-group">
                               <label>Company (disabled)</label>
-                              <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                              <input type="text" class="form-control" disabled="" placeholder="Company" value="">
                             </div>
                           </div>
                           <div class="col-md-3 px-md-1">
@@ -134,6 +134,6 @@
         @include ('components.footer')
     </div>
 </div>
-@include ('components.fixed')          
+@include ('components.fixed')
 @include ('components.change_theme_js')
 @endsection

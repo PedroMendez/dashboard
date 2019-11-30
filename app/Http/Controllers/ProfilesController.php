@@ -8,36 +8,28 @@ use Illuminate\Http\Request;
 class ProfilesController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $hasNav = true;
-
-        return view('profile', compact('hasNav'));
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $hasNav = true;
+
+        return view('profiles.create', compact('hasNav'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Profile $profile)
     {
-        //
+        Profile::create($this->validatesProfile());
+
+        return redirect(route('profiles.show', $profile));
     }
 
     /**
@@ -48,7 +40,9 @@ class ProfilesController extends Controller
      */
     public function show(Profile $profile)
     {
-        //
+        $hasNav = true;
+
+        return view('profiles.show', compact('hasNav', 'profile'));
     }
 
     /**
@@ -65,13 +59,14 @@ class ProfilesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Profile $profile)
     {
-        //
+        $profile->update($this->validatesProfile());
+
+        return redirect(route('profiles.show', $profile));
     }
 
     /**
@@ -83,5 +78,20 @@ class ProfilesController extends Controller
     public function destroy(Profile $profile)
     {
         //
+    }
+
+    /**
+     * Validates Request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    protected function validatesProfile(Request $request)
+    {
+        return request()->validate([
+            'interests' => 'required',
+            'phone' => 'required',
+            'image' => 'required'
+        ]);
     }
 }

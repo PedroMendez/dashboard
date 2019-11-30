@@ -30,7 +30,7 @@
       </a>
     </li>
     <li>
-      <a href="{{ url('profiles') }}">
+      <a href="{{ url('profiles.show') }}">
         <i class="tim-icons icon-single-02"></i>
         <p>User Profile</p>
       </a>
