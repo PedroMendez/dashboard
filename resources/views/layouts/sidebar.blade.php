@@ -1,12 +1,12 @@
 <div class="sidebar-wrapper">
   <div class="logo">
-    <a href="/" class="simple-text logo-normal">
+    <a href="{{ url('home') }}" class="simple-text logo-normal">
       Home
     </a>
   </div>
   <ul class="nav">
     <li class="active ">
-      <a href="./dashboard.html">
+      <a href="{{ url('home') }}">
         <i class="tim-icons icon-chart-pie-36"></i>
         <p>Dashboard</p>
       </a>
@@ -30,7 +30,7 @@
       </a>
     </li>
     <li>
-      <a href="./user.html">
+      <a href="{{ url('profiles') }}">
         <i class="tim-icons icon-single-02"></i>
         <p>User Profile</p>
       </a>
