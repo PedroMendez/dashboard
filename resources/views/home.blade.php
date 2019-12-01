@@ -3,7 +3,7 @@
 @section('content')
 <div class="wrapper">
     <div class="sidebar">
-        @include ('layouts.sidebar')
+        @include ('layouts.sidebar', ['profile' => $profile])
           <div class="main-panel">
             <div class="content">
               <div class="row">

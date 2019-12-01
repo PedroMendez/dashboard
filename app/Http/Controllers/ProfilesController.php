@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilesController extends Controller
 {
@@ -22,12 +23,14 @@ class ProfilesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function store(Profile $profile)
-    {
-        Profile::create($this->validatesProfile());
+    public function store(Request $request, Profile $profile)
+    {   
+
+        Profile::create($this->validatesProfile($request));
 
         return redirect(route('profiles.show', $profile));
     }
@@ -62,9 +65,9 @@ class ProfilesController extends Controller
      * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(Profile $profile)
+    public function update(Request $request, Profile $profile)
     {
-        $profile->update($this->validatesProfile());
+        $profile->update($this->validatesProfile($request));
 
         return redirect(route('profiles.show', $profile));
     }
@@ -88,10 +91,16 @@ class ProfilesController extends Controller
      */
     protected function validatesProfile(Request $request)
     {
-        return request()->validate([
-            'interests' => 'required',
-            'phone' => 'required',
-            'image' => 'required'
+        return $request->validate([
+            'user_id' => 'required',
+            'about_me' => 'required',
+            'first_name' => 'required', 
+            'last_name' => 'required', 
+            'address' => 'required', 
+            'city' => 'required', 
+            'country' => 'required', 
+            'zip_code' => 'required', 
+            'description' => 'required'
         ]);
     }
 }

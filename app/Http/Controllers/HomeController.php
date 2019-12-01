@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
+
 class HomeController extends Controller
 {
     /**
@@ -17,12 +19,15 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
+     * @param  \App\Profile  $profile
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Profile $profile)
     {
+        $profile = Profile::where('user_id', auth()->id())->first();
+
         $hasNav = true;
 
-        return view('home', compact('hasNav'));
+        return view('home', compact('hasNav', 'profile'));
     }
 }

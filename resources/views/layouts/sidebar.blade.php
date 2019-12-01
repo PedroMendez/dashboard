@@ -12,25 +12,25 @@
       </a>
     </li>
     <li>
-      <a href="./icons.html">
-        <i class="tim-icons icon-atom"></i>
-        <p>Icons</p>
+      <a href="{{ route('profiles.create') }}">
+        <i class="tim-icons icon-pin"></i>
+        <p>Create Profile</p>
       </a>
     </li>
     <li>
       <a href="./map.html">
-        <i class="tim-icons icon-pin"></i>
-        <p>Maps</p>
+        <i class="tim-icons icon-atom"></i>
+        <p>View Resourses</p>
       </a>
     </li>
     <li>
-      <a href="./notifications.html">
+      <a href="">
         <i class="tim-icons icon-bell-55"></i>
         <p>Notifications</p>
       </a>
     </li>
     <li>
-      <a href="{{ url('profiles.show') }}">
+      <a href="{{ route('profiles.show', $profile ?? '') }}">
         <i class="tim-icons icon-single-02"></i>
         <p>User Profile</p>
       </a>
