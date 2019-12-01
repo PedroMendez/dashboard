@@ -7,7 +7,7 @@
           <div class="main-panel">
             <div class="content">
               <form method="POST" action="/profiles">
-                @csrf              
+                @csrf
                 <div class="row">
                   <div class="col-md-8">
                     <div class="card">
@@ -20,7 +20,7 @@
                             <div class="form-group">
                               <label>Company (disabled)</label>
                               <input type="text" class="form-control" disabled="" placeholder="Company" value="">
-                              <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">                              
+                              <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             </div>
                           </div>
                           <div class="col-md-3 px-md-1">
@@ -40,7 +40,7 @@
                           <div class="col-md-6 pr-md-1">
                             <div class="form-group">
                               <label>First Name</label>
-                              <input type="text" name="first_name" class="form-control" placeholder="Company" value="">
+                              <input type="text" name="first_name" class="form-control" placeholder="First Name" value="">
                             </div>
                           </div>
                           <div class="col-md-6 pl-md-1">
@@ -88,7 +88,7 @@
                         </div>
                       </div>
                       <div class="card-footer">
-                        <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                        <button type="submit" class="btn btn-fill btn-primary">Create</button>
                       </div>
                     </div>
                   </div>
@@ -106,7 +106,7 @@
                               <h5 class="title"></h5>
                             </a>
                             <p class="description">
-                              
+
                             </p>
                           </div>
                         </p>

@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/profiles', 'ProfilesController');
+Route::resource('/profiles', 'ProfilesController', [
+    'except' => ['index', 'edit']
+]);
