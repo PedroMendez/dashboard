@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name') }}</title>
-
+    <link href="/dashboard.png" rel="icon">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -28,7 +28,7 @@
         @if (!empty($hasNav))
             @include('layouts.nav')
         @endif
-        <main>      
+        <main>
             @yield('content')
         </main>
     </div>
